@@ -2,6 +2,10 @@
 #include <stdlib.h>
 #include <locale.h>
 
+//Protótipos das funcções
+int menor(int valores[], int n);
+int maior(int valores[], int n);
+
 int main(int argc, char *argv[]) {
 	
 	setlocale(LC_ALL, "Portuguese");
@@ -21,8 +25,8 @@ int main(int argc, char *argv[]) {
 	menor_valor = menor(valores, 4);
 	maior_valor = maior(valores, 4);
 	
-	printf("\nO menor valor �: %d\n", menor_valor);
-	printf("\nO maior valor �: %d\n", maior_valor);
+	printf("\nO menor valor é: %d\n", menor_valor);
+	printf("\nO maior valor é: %d\n", maior_valor);
 	
 	system("pause");
 	
@@ -31,16 +35,22 @@ int main(int argc, char *argv[]) {
 
 int menor(int valores[], int n)
 {
-	
+	//variável que recebe menor valor no array;
 	int menV;
+	
 	for(int i = 0; i < n; i++)
 	{
+		//se o indíce começar em zero, a variável menV será inicializada com o valor do indíce 0
 		if(i == 0)
 		{
 			menV = valores[0];	
 		}
 		else if(valores[i] < menV)
 		{
+			/*A variável menV receberá o valor se o valor 
+			*encontrado em determinado indíce, 
+			*for menor que o valor armazenado em menV
+			*/
 			menV = valores[i];
 		}
 	}
@@ -63,12 +73,17 @@ int maior(int valores[], int n)
 	int maiV;
 	for(int i = 0; i < n; i++)
 	{
+		//se o indíce começar em zero, a variável maiV será inicializada com o valor do indíce 0
 		if(i == 0)
 		{
 			maiV = valores[0];	
 		}
 		else if( valores[i] > maiV)
 		{
+			/*A variável maiV receberá o valor se o valor 
+			*encontrado em determinado indíce, 
+			*for maior que o valor armazenado em maiV
+			*/
 			maiV = valores[i];
 		}
 	}
